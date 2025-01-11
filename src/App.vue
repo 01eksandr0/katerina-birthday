@@ -1,3 +1,81 @@
+<script setup>
+import { onMounted } from "vue";
+const aaaa = () => {
+  const firstPage = {
+    page: document.querySelector(".first-page"),
+    pageSecond: document.querySelector(".second-page"),
+    btn: document.querySelector(".first-page-btn"),
+    opacityPage: () => {
+      firstPage.page.classList.add("is-opacity");
+      setTimeout(() => {
+        firstPage.page.style.display = "none";
+      }, 400);
+      setTimeout(() => {
+        firstPage.pageSecond.classList.toggle("is-opacity");
+      }, 500);
+    },
+  };
+  firstPage.btn.addEventListener("click", firstPage.opacityPage);
+  // second page
+  const secondPage = {
+    pageSecond: document.querySelector(".second-page"),
+    pageThree: document.querySelector(".four-page"),
+    btn: document.querySelector(".second-page-btn"),
+    opacityPage: () => {
+      secondPage.pageSecond.classList.add("is-opacity");
+      setTimeout(() => {
+        secondPage.pageSecond.style.display = "none";
+      }, 400);
+      setTimeout(() => {
+        secondPage.pageThree.classList.toggle("is-opacity");
+      }, 500);
+    },
+  };
+  secondPage.btn.addEventListener("click", secondPage.opacityPage);
+};
+onMounted(aaaa);
+</script>
+
+<template>
+  <header>
+    <div class="container">
+      <!-- page first -->
+      <div class="first-page">
+        <p class="first-page-hello">Вітаю, Катеринко!</p>
+        <p class="first-page-title">Як вже стукнуло 20 то тисни кнопку</p>
+        <div class="first-page-container-btn">
+          <button class="first-page-btn" type="button"><span>></span></button>
+        </div>
+      </div>
+      <!-- page second -->
+      <div class="second-page is-opacity">
+        <p class="second-page-text">
+          Вітаю з днем народження. Бажаю щоб всі наступні роки не летіли швидко
+          і були наповнені тільки хорошими подіями і позитивом 🫶🏼 Ти прекрасна,
+          я хочу щоб ти цього ніколи не забувала ❤️❤️❤️ люблю тебе ❤️❤️❤️
+        </p>
+        <div class="second-page-container-btn">
+          <button class="second-page-btn" type="button">
+            <span>></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- page four -->
+      <div class="four-page is-opacity">
+        <div class="four-page-container-img">
+          <img class="four-page-img" src="./img/katerina-birsday.jpg" alt="" />
+        </div>
+
+        <p class="four-page-text">
+          Залишайся собою, але і не забувай зростати ❤️
+        </p>
+      </div>
+    </div>
+  </header>
+</template>
+
+<style>
 /* basa */
 * {
   box-sizing: border-box;
@@ -288,3 +366,4 @@ header {
   opacity: 0;
   transform: scale(10%);
 }
+</style>

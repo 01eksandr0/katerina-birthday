@@ -1,21 +1,18 @@
 {
-  "name": "vanilla-app-template",
+  "name": "katerina-birthday",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/katerina-birthday/",
+    "build": "vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "vite": "^4.0.5",
-    "glob": "^8.1.0"
-  },
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
-  "license": "ISC",
   "dependencies": {
-    "vite-plugin-full-reload": "^1.0.5",
-    "vite-plugin-html-inject": "^1.0.1"
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.5"
   }
 }
